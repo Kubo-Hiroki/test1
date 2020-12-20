@@ -1,0 +1,47 @@
+%----以下文字の大きさ，フォント，余白などを決定する設定----
+\documentclass[a4paper,10pt]{jsarticle}
+\bibliographystyle{junsrt} %参考文献の並べ順junsrtの場合，本文内で参照した順
+\setlength{\topmargin}{-17truemm}
+\setlength{\oddsidemargin}{-0.4truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\textheight}{247truemm}
+%-------------------------------------------------
+
+
+\title{セクションの記述}%タイトル
+\author{ER18028 久保宏樹}%著者
+\date{2020年12月20日}%日付
+
+\begin{document}%本文の始まり
+%--------------------------------以降に本文を記述--------------------------
+\maketitle%上記で設定したtitle,author,dateを表示
+\section{セクションについて}
+\label{sec:label1}
+\subsection{サブセクション}
+\label{sec:label2}
+\subsubsection{サブサブセクション}
+\label{sec:label3}
+\subsubsection{サブサブサブセクション}
+\label{sec:label4}
+chapter1\_section.texとchapter1\_section.pdfを照らし合わせて読んでください．\\
+
+texでは「サブサブセクション」までセクションを作成することができます．\\
+セクションは，\ref{sec:label1}, \ref{sec:label2}, \ref{sec:label3}のように参照することが可能です．セクションの場合，参照は必要な場合のみ行えばOKです．
+また，参照する場合，一度コンパイルしただけだと参照した時に「?」と表示されるので「pLaTeX(ptex2pdf)」→「pLaTeX(ptex2pdf)」と2回コンパイルを実行する必要があります．\\
+※ VScodeでの環境構築が完了している場合，「ctrl+s」で保存するだけでコンパイルが完了します．
+
+%-------------------以下課題------------------------
+\section{課題}
+\noindent 必須：authorを自分の名前，dateを提出日に変更してください．\\
+任意：セクションを追加してください（セクションの名前は何でも可）．\\
+
+\noindent 編集が完了したら，コンパイルしてください．\\
+VScodeで編集している場合，「ctrl+s」で保存＆コンパイル→「ctrl+alt+V」で出力されるpdfをプレビューできるので変更点が反映されていることを確認してください．
+%----------------------------------------------------
+\end{document}
+
+%以下，今回登場した機能の説明
+%--------------------セクション---------------------------
+%\section{セクション名}
+%\label{ラベル名}      %セクションの場合は\label{sec:ラベル名}で定義することが多い．ラベルは\ref{ラベル名}で参照可能．
+%----------------------------------------------

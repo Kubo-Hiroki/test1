@@ -1,0 +1,44 @@
+%----以下文字の大きさ，フォント，余白などを決定する設定----
+\documentclass[a4paper,10pt]{jsarticle}
+\bibliographystyle{junsrt} %参考文献の並べ順を設定可能．junsrtの場合，本文内で参照した順
+\setlength{\topmargin}{-17truemm}
+\setlength{\oddsidemargin}{-0.4truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\textheight}{247truemm}
+%-------------------------------------------------
+
+%\usepackage{}：Latexで拡張機能を使用するための宣言-------------
+\usepackage[dvipdfmx]{hyperref}%しおり作成,URL作成，ハイパーリンク機能のためのパッケージ（bibtexに直接は関係ありません）
+%------------------------------------------------------------------
+
+\title{bibtexを使用して参考文献を表示する}%タイトル
+\author{ER18028 久保　宏樹}%著者
+\date{2020年12月20日}%日付
+
+\begin{document}%本文の始まり
+\maketitle%上記で設定したtitle,author,dateを表示
+\section{bibtexについて}
+chapter5\_bibtex.texとchapter5\_bibtex.texとreference.bibを照らし合わせて読んでください．\\
+
+bibファイルを作成して，そこに参考文献の情報を記述します．ここに記述するデータベースをbibtexと言います．今回は，「reference.bib」という名前にしました．\\
+有名な論文な場合，「論文名　bibtex」と検索するとbibtexがヒットすることが多いです（他に調べる方法や，自分で作成する方法は気になったら調べてください）．
+今回はLSTMという論文の情報を「LSTM bibtex」で検索して調べました．bibtexの記述があるサイトが見つかると思うので，基本的にはそれをbibファイルにそのままコピー＆ペーストすればOKです．\\
+
+LSTM\cite{LSTM}のように，参考文献を参照することが可能です．一度も参照されていない文献はページ下部の「参考文献」の欄にも表示されないので注意してください．
+また，bibtexは通常のコンパイルでは，反映されないため「pLaTeX(ptex2pdf)」→「pBibTeX」→「pLaTeX(ptex2pdf)」→「pLaTeX(ptex2pdf)」の順番でコンパイルする必要があります．\\
+※ VScodeで環境構築が完了している場合，「LaTeX Workshop:Build with recipe」を実行するショートカットを入力→「build-and-bibtex」を選択してください．\\
+
+chromeの拡張機能bibtex entry from url\cite{bibtex_url}を使用すれば，webサイトのbibtex情報も簡単に取得することが可能です．
+ただし，urlを記述する場合はusepackageにhyperrefを指定する必要があります．
+%-----------------以下課題--------------------------------------------
+\section{課題}
+\noindent 必須：authorを自分の名前，dateを提出日に変更してください．\\
+任意：reference.bibに参考文献を追加してください（参考文献は何でも可）．また，citeを使用して「LSTM\cite{LSTM}」の様に参照してください．\\
+
+\noindent 編集が完了したら，コンパイルしてください．\\
+VScodeで編集している場合，「LaTeX Workshop:Build with recipe」を実行するショートカットを入力→「build-and-bibtex」でコンパイル→「ctrl+alt+V」で出力されるpdfをプレビューできるので変更点が反映されていることを確認してください．
+%--------------------------------------------------------------
+\bibliography{reference.bib}%bibtexを読み込む
+\end{document}
+
+\end{document}

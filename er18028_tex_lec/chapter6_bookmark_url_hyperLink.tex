@@ -1,0 +1,73 @@
+%----以下文字の大きさ，フォント，余白などを決定する設定----
+\documentclass[a4paper,10pt]{jsarticle}
+\setlength{\topmargin}{-17truemm}
+\setlength{\oddsidemargin}{-0.4truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\textheight}{247truemm}
+%-------------------------------------------------
+
+%\usepackage{}：Latexで拡張機能を使用するための宣言-------------
+\usepackage[dvipdfmx]{graphicx}%図を埋め込むためのパッケージ ※ハイパーリンクの説明用．このチャプターに直接は関係ないです．
+\usepackage{float}%その場に表・図を表示させるパッケージ ※ハイパーリンクの説明用このチャプターに直接は関係ないです．
+\usepackage[dvipdfmx]{hyperref}%しおり作成,URL作成，ハイパーリンク機能のためのパッケージ
+\usepackage{pxjahyper}%しおりを日本語化
+%------------------------------------------------------------------
+
+\title{しおり，URL．ハイパーリンク}%タイトル
+\author{ER18028 久保　宏樹}%著者
+\date{2020年12月20日}%日付
+
+\begin{document}%本文の始まり
+\maketitle%上記で設定したtitle,author,dateを表示
+\section{hyperrefライブラリについて}
+chapter6\_bookmark.texとchapter6\_bookmark.texを照らし合わせて読んでください．
+\subsection{bookmark}
+usepackageでhyperrefとpxjahyperを指定すると，しおりを使用できます．\\
+
+このpdfをAdobe Acrobat DC等のpdf閲覧ソフトで閲覧すると左側にしおり（またはブックマーク）が表示されます．
+表示されない場合は設定からしおりの表示，非表示が設定できると思います
+（Adoce Acrobat Reader DCの場合「表示」→「表示切り替え」→「ナビゲーションパネル」→「しおり」でしおりの表示，非表示が変更できます）．
+
+\subsection{URL}
+hyperrefパッケージを使用すると下記の様にURLを記述することが可能になります．また，URLをクリックするとリンク先にアクセスします．\\
+\url{https://qiita.com/kantakunspace/items/2add68a0e60b8ce4beea}
+\subsection{ハイパーリンク}
+hyperrefパッケージを使用すると，図，表，式，参考文献の参照番号をクリックできるようになります．\\
+%\ref{fig:label}←クリックすると，図\ref{fig:label}の場所までジャンプします．\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+a\\
+%---図の表示（usepackageにhyperref,pxjahyperを追加するだけでハイパーリンクが可能になるので，記述方法についてはchapter2と変更点はありません．表，式，参考文献も同様．）------------
+
+%---------------------------------------------------------------------
+%-----------------以下課題----------------------------
+\section{課題}
+\noindent 必須：authorを自分の名前，dateを提出日に変更してください．\\
+任意：URLを追加してください（URLは何でも可）．\\
+
+\noindent 編集が完了したら，コンパイルしてください．\\
+VScodeで編集している場合，「ctrl+s」で保存＆コンパイル→「ctrl+alt+V」で出力されるpdfをプレビューできるので変更点が反映されていることを確認してください．\\
+%------------------------------------------------------
+
+
+\end{document}

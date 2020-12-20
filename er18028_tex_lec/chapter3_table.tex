@@ -1,0 +1,84 @@
+%----以下文字の大きさ，フォント，余白などを決定する設定----
+\documentclass[a4paper,10pt]{jsarticle}
+\setlength{\topmargin}{-17truemm}
+\setlength{\oddsidemargin}{-0.4truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\textheight}{247truemm}
+%-------------------------------------------------
+
+%\usepackage{}：Latexで拡張機能を使用するための宣言-------------
+\usepackage[dvipdfmx]{graphicx}%図を埋め込むためのパッケージ
+\usepackage{float}%その場に表・図を表示させるパッケージ
+%------------------------------------------------------------------
+
+\title{表を表示する}%タイトル
+\author{ER18028　久保　宏樹}%著者
+\date{2020年12月20日}%日付
+
+\begin{document}%本文の始まり
+\maketitle%上記で設定したtitle,author,dateを表示
+\section{表の表示について}
+chapter3\_table.texとchapter3\_table.pdfを照らし合わせて読んでください．\\
+
+usepackageでdvipdfmx, graphicx, floatを指定すると表を作成することが可能\\
+
+表は，表\ref{tb:label}のように参照することが可能です．基本的に，表を記述する場合，必ず1度以上参照する必要があります．
+また，一度コンパイルしただけだと，参照した時に「?」と表示されるので「pLaTeX(ptex2pdf)」→「pLaTeX(ptex2pdf)」と2回コンパイルを実行する必要があります．\\
+※ VScodeでの環境構築が完了している場合，「ctrl+s」で保存するだけでコンパイルが完了します．
+%---------------表の表示方法--------------------
+\begin{table}[H]
+    \caption{title}
+    \label{tb:label}                 
+    \centering                     
+    \begin{tabular}{c | c  c}
+        \hline                        
+        title1 & title2 & title2-2 \\          
+        \hline \hline
+        hoge1 & hoge2 & hoge2-2 \\
+        hoge3 & hoge4 & hoge4-2 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+\begin{table}[H]
+    \caption{title}
+    \label{tb:label}                 
+    \centering                     
+    \begin{tabular}{c | c  c}
+        \hline                        
+        title1 & title2 & title2-2 \\          
+        \hline \hline
+        hoge1 & hoge2 & hoge2-2 \\
+        hoge3 & hoge4 & hoge4-2 \\
+        \hline
+    \end{tabular}
+\end{table}
+%------------------------------------------
+注意点：左端，右端に縦線を加えることは基本的に禁止です．
+
+%----------------以下課題------------------------------------
+\section{課題}
+\noindent 必須：authorを自分の名前，dateを提出日に変更してください．\\
+任意：表を追加してください（表は何でも可）．ただし，左端，右端に縦線を加えることは禁止とします．また，refを使用して「表を表\ref{tb:label}に示す」の様に参照してください．\\
+
+\noindent 編集が完了したら，コンパイルしてください．\\
+VScodeで編集している場合，「ctrl+s」で保存＆コンパイル→「ctrl+alt+V」で出力されるpdfをプレビューできるので変更点が反映されていることを確認してください．
+%-------------------------------------------------------------
+\end{document}
+
+%以下，今回登場した機能の説明
+%------------------------表-------------------------------------
+%\begin{table}[表の表示位置]  　  % 表の表示位置の例→h：その場，b：ページ下部，t：ページ上部，p：他のページ
+%   \centering                   % centering：中心に表示
+%   \caption{表のタイトル}
+%   \label{ラベル名}　　　　　　　%表の場合は\label{tb:ラベル名}で定義することが多い．ラベルは\ref{ラベル名}で参照可能．
+%   \begin{tabular}{各列の設定}　% begin{tabular}{|c|c|}のようにバーティカルバーを挟むと縦線が表示される．
+%       \centering　　　　　　　　% 各列の表示位置の例→l：左詰，c：中央揃え，r：右揃え
+%       \hline                  % hline：横線を追加
+%       title1 & title2 \\      % 1列目 & 2 列目 \\ 
+%       \hline \hline
+%       hoge1 & hoge2 \\
+%       hoge3 & hoge4 \\
+%    \end{tabular}
+%\end{table}
+%------------------------------------------------------------

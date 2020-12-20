@@ -1,0 +1,54 @@
+%----以下文字の大きさ，フォント，余白などを決定する設定----
+\documentclass[a4paper,10pt]{jsarticle}
+\bibliographystyle{junsrt} %参考文献の並べ順junsrtの場合，本文内で参照した順
+\setlength{\topmargin}{-17truemm}
+\setlength{\oddsidemargin}{-0.4truemm}
+\setlength{\textwidth}{160truemm}
+\setlength{\textheight}{247truemm}
+%------usepackage-----------------------------------
+\usepackage{listings,jlisting}%ソースコードを埋め込むためのパッケージ(jlistingはサイトからDLする必要あり)
+\usepackage[dvipdfmx]{hyperref}%しおり作成,URL作成，ハイパーリンク機能のためのパッケージ ※今回のチャプターに直接関係はありません
+\usepackage{pxjahyper}
+%-------------------------------------------------
+\lstset{%ソースコードを書き込む時の設定--------------------------------
+  columns=[l]{fullflexible}, % 文字をつめる
+  basicstyle=\footnotesize,%
+  commentstyle=\textit,%
+  classoffset=1,%
+  keywordstyle=\bfseries,%
+  frame=single,framesep=5pt,%枠線の種類 frame=singleならば一重枠,frame=tRBlならば二重枠
+  showstringspaces=false,%
+  numbers=left,stepnumber=1,numberstyle=\footnotesize,%
+  breaklines=true,%trueで１行が長い時に改行
+  firstnumber=1,%行番号が何番から始まるか
+  xrightmargin=1zw,%枠右側の余白 
+  xleftmargin=1zw%枠左側の余白
+}%本文中に　\lstinputlisting[caption=キャプション,label=ラベル]{ファイル名}でソースコードを貼り付け
+%--------------------------------------------------------------------
+
+\title{以降のchapterについて}%タイトル
+\author{ER18028 久保　宏樹}%著者
+\date{2020年12月20日}%日付
+
+\begin{document}%本文の始まり
+\maketitle
+\section{注意点}
+以降のchapterでは「semi/homework/2020\_12\_14/2020\_12\_14.ipynb」で環境構築をした前提で説明を行います．
+また，texファイルはVScodeを使用して記述する前提とします．\\
+
+一部のpdf閲覧ツール（Adobe Acrobat Reader DC等）の場合，pdfを開いたままの状態でコンパイルするとコンパイルエラーが発生するので注意してください．
+SumatraPDFというpdf閲覧ツールの場合，pdfを開いたままの状態でもコンパイルエラーが出ないのでおすすめです．\\
+
+各chapterには必須の課題と，任意の課題があります．\\
+必須の課題は全て「著者の名前を自分の名前に変更する，日付を提出日に変更する」になっています．
+これは，各chapterのtexファイルが正しくコンパイルできるかを確認するためです．\\
+任意の課題は，各chapterに沿った内容の課題になっています．4年生になると必ず使う内容のものがほとんどなので，余裕があれば挑戦しましょう．
+
+\section{提出期限について}
+提出の際は，各chapterのtexファイル，コンパイルした後のpdfファイルを提出してください
+（その他コンパイルの際に生成されるファイルはあってもなくてもOKです）．
+また，ディレクトリ名を「tex\_lec」→「er18○○○tex\_lec」に変更して提出してください．\\
+githubへのアップロードの方法はゼミの時間に説明してあるので，忘れてしまった人はその資料を参考にしましょう．\\
+chapter1～chapter7までの課題の提出期限は12月20日（日）の18時までとします．
+今回の課題は「texの環境が正しく構築されていることを確認する」ことが最優先なので，各chapterの必須の課題を優先的に行ってください．
+\end{document}
