@@ -1,3 +1,5 @@
 test
 
 これはテスト用のリポジトリです。
+パスワード　
+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
